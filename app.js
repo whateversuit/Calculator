@@ -1,9 +1,38 @@
-const buttons = document.querySelectorAll('button');
+const buttonsDigit = document.querySelectorAll('.digit');
+const buttonsOperand = document.querySelectorAll('.operand');
+const buttonClearAll = document.querySelector('.clear');
+const buttonDelete = document.querySelector('.delete');
+const buttonEquals = document.querySelector('.equals');
 
-buttons.addEventListener('click', () => {
-    console.log('clicked');
+
+buttonsDigit.forEach(button => {
+    const paragraph = document.getElementById('p');
+    button.addEventListener('click', (e) => {
+    const text = document.createTextNode(e.target.innerText);
+    paragraph.appendChild(text);
+    })
+
+
 })
 
+
+
+
+buttonsOperand.forEach(button => {
+    button.addEventListener('click', (e) => {
+        console.log(e.target.innerText)
+    })
+})
+
+buttonClearAll.addEventListener('click', (e) => {
+    console.log(e.target.innerText)
+})
+buttonDelete.addEventListener('click', (e) => {
+    console.log(e.target.innerText)
+})
+buttonEquals.addEventListener('click', (e) => {
+    console.log(e.target.innerText)
+})
 
 // Single operand functions
 function add(num, numTwo) {

@@ -110,7 +110,7 @@ button:hover {
   color: gold;
   border-color: rgba(255, 215, 0, 0.95);
 }
-.digits {
+.displayDigits {
   font-size: 30px;
   color: white;
   margin: 0;
