@@ -4,12 +4,19 @@ const buttonClearAll = document.querySelector('.clear');
 const buttonDelete = document.querySelector('.delete');
 const buttonEquals = document.querySelector('.equals');
 
+let num = '';
+let numTwo = '';
+let operator = '';
+
 
 buttonsDigit.forEach(button => {
     const paragraph = document.getElementById('p');
     button.addEventListener('click', (e) => {
     const text = document.createTextNode(e.target.innerText);
     paragraph.appendChild(text);
+    console.log(paragraph);
+    num += e.target.innerText
+    num = parseInt(num);
     })
 
 
@@ -32,6 +39,7 @@ buttonDelete.addEventListener('click', (e) => {
 })
 buttonEquals.addEventListener('click', (e) => {
     console.log(e.target.innerText)
+    
 })
 
 // Single operand functions
