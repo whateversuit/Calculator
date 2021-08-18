@@ -71,10 +71,10 @@ function operate(operator, num, numTwo){
         return subtract(num, numTwo);
     }
     if (operator == multiply) {
-        return subtract(num, numTwo);
+        return multiply(num, numTwo);
     }
     if (operator == divide) {
-        return subtract(num, numTwo);
+        return divide(num, numTwo);
     } else {
         return false;
     }
