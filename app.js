@@ -40,7 +40,7 @@ buttonClearAll.addEventListener('click', (e) => {
     numTwo = '';
     operator = '';
     const text = document.createTextNode(e.target.innerText);
-    paragraph.remove(text); // Fix This
+    paragraph.innerText = "";
   
     
 
