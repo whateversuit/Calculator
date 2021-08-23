@@ -8,7 +8,7 @@ const paragraph = document.getElementById('p');
 let num = '';
 let numTwo = '';
 let operator = '';
-
+let numArray = [];
 
 // loops through all digit buttons and onclick, display it on screen whilte creating a p tag.
 // Paring num to an int. 
@@ -16,9 +16,12 @@ buttonsDigit.forEach(button => {
     button.addEventListener('click', (e) => {
     const text = document.createTextNode(e.target.innerText);
     paragraph.appendChild(text);
-    num += e.target.innerText
+    num += e.target.innerText;
+    numArray = [...num];
     num = parseInt(num);
-    console.log(num)
+    console.log(numArray)
+    
+
     })
 
 
@@ -39,7 +42,8 @@ buttonClearAll.addEventListener('click', (e) => {
     num = '';
     numTwo = '';
     operator = '';
-    const text = document.createTextNode(e.target.innerText);
+    numArray =[];
+    //const text = document.createTextNode(e.target.innerText);
     paragraph.innerText = "";
   
     
@@ -47,6 +51,11 @@ buttonClearAll.addEventListener('click', (e) => {
 })
 buttonDelete.addEventListener('click', (e) => {
     console.log(e.target.innerText)
+    numArray.pop();
+    paragraph.innerText = numArray.join('');
+    
+   
+
 })
 buttonEquals.addEventListener('click', (e) => {
     console.log(e.target.innerText)
