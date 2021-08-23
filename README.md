@@ -1,9 +1,6 @@
 # Calculator
 
-Browser calculator project.
+Browser beginner calculator project.
 
-ongoing...
+A calculator created while learning javascript, might explain the wierd code. Main goal was to make it work not focusing on writing the most optimal code. This is also one of my first projects.
 
-Get clear function to work
-get delete function to work
-make calculator-functions work
