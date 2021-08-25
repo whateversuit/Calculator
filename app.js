@@ -4,7 +4,7 @@
 // make new variable with = results
 // make it not break when using delete button +++
 // make only one function out of operate instead of several callbacks
-// maybe not use arrays. Use only string, check if possible.
+
 
 const buttonsDigit = document.querySelectorAll('.digit');
 const buttonsOperand = document.querySelectorAll('.operand');
@@ -13,11 +13,11 @@ const buttonDelete = document.querySelector('.delete');
 const buttonEquals = document.querySelector('.equals');
 const paragraph = document.getElementById('p');
 
+
 let num = '0';
 let numTwo = '0';
 let operator = '';
-let numArray = [0];
-let numTwoArray = [0];
+
 
 
 // loops through all digit buttons and onclick, display it on screen whilte creating a p tag.
@@ -30,16 +30,14 @@ buttonsDigit.forEach(button => {
             const text = document.createTextNode(e.target.innerText);
             paragraph.appendChild(text);
             num += e.target.innerText;
-             numArray = [...num];
-             num = parseInt(num)
-             console.log(numArray)
+             num = parseInt(num);
+            
         }else {
             const text = document.createTextNode(e.target.innerText);
             paragraph.appendChild(text);
             numTwo += e.target.innerText;
-             numTwoArray = [...numTwo];
-             numTwo = parseInt(numTwo)
-             console.log(numTwoArray)
+             numTwo = parseInt(numTwo);
+             
         }
      })
 })
@@ -64,17 +62,15 @@ buttonClearAll.addEventListener('click', (e) => {
     num = '';
     numTwo = '';
     operator = '';
-    numArray =[0];
-    numTwoArray=[0];
     paragraph.innerText = "";
 })
 
 buttonDelete.addEventListener('click', (e) => {
-    console.log(e.target.innerText)
-    //const deleteNum = num.slice(0, -1);
-    numArray.pop();
-    paragraph.innerText = numArray.join('');
-    //paragraph.innerText = (num)
+   // const text = document.createTextNode(e.target.innerText);
+   // paragraph.appendChild(text);
+    //console.log(e.target.innerText)
+    //const deleteNum = num.toString().slice(0, -1);
+    //paragraph.appendChild(deleteNum);
 })
 
 // Equals button calling operate function and changing innertext.
