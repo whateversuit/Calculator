@@ -7,22 +7,22 @@
 
 
 const buttonsDigit = document.querySelectorAll('.digit');
-const buttonsOperand = document.querySelectorAll('.operand');
+const buttonsOperator = document.querySelectorAll('.operand');
 const buttonClearAll = document.querySelector('.clear');
 const buttonDelete = document.querySelector('.delete');
 const buttonEquals = document.querySelector('.equals');
 const paragraph = document.getElementById('p');
 
 
-let num = '0';
-let numTwo = '0';
+let num = '';
+let numTwo = '';
 let operator = '';
 
 
 
 // loops through all digit buttons and onclick, display it on screen whilte creating a p tag.
-// adding string of num to an array called numArray(spread) 
-// adding to numTwo instad of num if operator is chosen
+
+// adding to numTwo instead of num if operator is chosen
 
 buttonsDigit.forEach(button => {
     button.addEventListener('click', (e) => {
@@ -32,19 +32,22 @@ buttonsDigit.forEach(button => {
             num += e.target.innerText;
              num = parseInt(num);
             
-        }else {
+        }
+        else if (operator !== '') {
             const text = document.createTextNode(e.target.innerText);
             paragraph.appendChild(text);
             numTwo += e.target.innerText;
-             numTwo = parseInt(numTwo);
+            numTwo = parseInt(numTwo);
              
         }
+        
+
      })
 })
 
 // loops through operators, adding them to screen and stores in variable. Only if empty.
 
-buttonsOperand.forEach(button => {
+buttonsOperator.forEach(button => {
     button.addEventListener('click', (e) => {
         if (operator === "") {
             const text = document.createTextNode(e.target.innerText);
@@ -52,6 +55,14 @@ buttonsOperand.forEach(button => {
             operator += e.target.value;
             console.log(e.target.value)
             
+        }
+        else if (operator !== '' && num == ''){
+            operator = '';
+            const text = document.createTextNode(e.target.innerText);
+            paragraph.appendChild(text);
+            operator += e.target.value;
+            console.log(e.target.value)
+            paragraph.innerText = operator;
         }
     })
 })
@@ -62,15 +73,18 @@ buttonClearAll.addEventListener('click', (e) => {
     num = '';
     numTwo = '';
     operator = '';
-    paragraph.innerText = "";
+    paragraph.innerText = '';
 })
 
 buttonDelete.addEventListener('click', (e) => {
-   // const text = document.createTextNode(e.target.innerText);
-   // paragraph.appendChild(text);
-    //console.log(e.target.innerText)
-    //const deleteNum = num.toString().slice(0, -1);
-    //paragraph.appendChild(deleteNum);
+    console.log(e.target.innerText)
+//    paragraph.innerText = paragraph.innerText.slice(0, -1);
+//    num = num.toString().slice(0, -1);
+//    num = parseInt(num);
+//    operator = operator.slice(0, -1);
+//    numTwo = numTwo.toString().slice(0, -1);
+//    numTwo = parseInt(num);
+   
 })
 
 // Equals button calling operate function and changing innertext.
